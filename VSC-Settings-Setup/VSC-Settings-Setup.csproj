@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <InvariantGlobalization>true</InvariantGlobalization>
+    <ApplicationIcon>..\assets\icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

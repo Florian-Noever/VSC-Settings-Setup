@@ -1,0 +1,23 @@
+name: Publish Release
+
+on:
+  release:
+    types: [published]
+
+concurrency:
+  group: dotnet-app-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  publish:
+    uses: Florian-Noever/Florian-Noever/.github/workflows/dotnet-app-publish.yml@v1
+    with:
+      project-path: VSC-Settings-Setup/VSC-Settings-Setup.csproj
+      publish-profile: FolderProfile
+      runtimes: '["win-x64", "win-arm64"]'
+      test-project: VSC-Settings-Setup.Tests/VSC-Settings-Setup.Tests.csproj

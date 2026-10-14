@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: Florian-Noever/Florian-Noever/.github/workflows/dotnet-app-ci.yml@v1
+    with:
+      project-path: VSC-Settings-Setup/VSC-Settings-Setup.csproj
+      publish-profile: FolderProfile
+      runtimes: '["win-x64", "win-arm64"]'
+      test-project: VSC-Settings-Setup.Tests/VSC-Settings-Setup.Tests.csproj
+
+  automerge:
+    needs: ci
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: Florian-Noever/Florian-Noever/.github/workflows/dependabot-automerge.yml@v1

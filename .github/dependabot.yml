@@ -1,0 +1,27 @@
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: nuget
+    directories:
+      - /VSC-Settings-Setup
+      - /VSC-Settings-Setup.Tests
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: deps
+    groups:
+      nuget-minor-and-patch:
+        update-types:
+          - minor
+          - patch

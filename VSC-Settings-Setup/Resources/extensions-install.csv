@@ -28,3 +28,4 @@
 "vscode-icons","vscode-icons","vscode-icons-team","VSCode Icons Team","Icons for Visual Studio Code","false"
 "crs-al-language-extension","waldo's CRS AL Language Extension","waldo","waldo","Make working with the (Dynamics NAV / 365) AL Language easier and more efficient.","false"
 "xliff-sync","XLIFF Sync","rvanbekkum","Rob van Bekkum","A tool to keep XLIFF translation files in sync.","false"
+"xliff-viewer","XLIFF Viewer","Florian-Noever","Florian Noever","View and edit XLIFF translation files with a structured GUI","false"

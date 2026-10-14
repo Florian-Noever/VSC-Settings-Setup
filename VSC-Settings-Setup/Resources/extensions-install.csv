@@ -14,6 +14,7 @@
 "errorlens","Error Lens","usernamehw","Alexander","Improve highlighting of errors, warnings and other language diagnostics.","false"
 "excalidraw-editor","Excalidraw","pomdtr","pomdtr","Draw schemas in VS Code using Excalidraw","false"
 "code-spell-checker-german","German - Code Spell Checker","streetsidesoftware","Street Side Software","German dictionary extension for VS Code.","false"
+"gitlantis","Gitlantis","brian-njogu","Brian Njogu","Transform your project into an explorable 3D world","false"
 "gitlens","GitLens — Git supercharged","eamodio","GitKraken","Supercharge Git within VS Code — Visualize code authorship at a glance via Git blame annotations and CodeLens, seamlessly navigate and explore Git repositories, gain valuable insights via rich visualizations and powerful comparison commands, and so much more","true"
 "json","json","zainchen","ZainChen","Json for Visual Studio Code","false"
 "markdown-all-in-one","Markdown All in One","yzhang","Yu Zhang","All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)","false"

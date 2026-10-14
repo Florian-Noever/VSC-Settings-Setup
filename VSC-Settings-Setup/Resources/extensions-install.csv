@@ -18,6 +18,7 @@
 "gitlens","GitLens — Git supercharged","eamodio","GitKraken","Supercharge Git within VS Code — Visualize code authorship at a glance via Git blame annotations and CodeLens, seamlessly navigate and explore Git repositories, gain valuable insights via rich visualizations and powerful comparison commands, and so much more","true"
 "json","json","zainchen","ZainChen","Json for Visual Studio Code","false"
 "markdown-all-in-one","Markdown All in One","yzhang","Yu Zhang","All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)","false"
+"markdown-mermaid","Markdown Preview Mermaid Support","bierner","Matt Bierner","Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview","false"
 "powershell","PowerShell","ms-vscode","Microsoft","Develop PowerShell modules, commands and scripts in Visual Studio Code!","true"
 "rainbow-csv","Rainbow CSV","mechatroner","mechatroner","Highlight CSV and TSV files, Run SQL-like queries","false"
 "vscode-todo-highlight","TODO Highlight","wayou","Wayou Liu","highlight TODOs, FIXMEs, and any keywords, annotations...","false"

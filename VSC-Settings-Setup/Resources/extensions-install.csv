@@ -1,4 +1,5 @@
 ﻿"name","displayname","publisher","author","description","prerelease"
+"al-actionimage-viewer","AL ActionImage Viewer","Florian-Noever","Florian Noever","View, Search and Copy AL Action Images","false"
 "al-codeactions","AL CodeActions","davidfeldhoff","David Feldhoff","Adds codeactions to the AL language","false"
 "al","AL Language extension for Microsoft Dynamics 365 Business Central","ms-dynamics-smb","Microsoft","Development tools for Dynamics 365 Business Central","true"
 "al-toolbox","AL Toolbox","bartpermentier","Bart Permentier","AL Language Regions and Snippets","false"

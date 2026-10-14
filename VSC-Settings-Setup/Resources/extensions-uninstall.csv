@@ -1,5 +1,6 @@
 ﻿"name","displayname","publisher","author","description"
 "al-navigator","AL Navigator","wbrakowski","Waldemar Brakowski","Create variables and parameters like a boss. Translate fields on hover. Navigate through al files with awesome shortcuts."
+"al-object-designer","AL Object Designer","martonsagi","Márton Sági","Object Designer optimized for (Dynamics 365 Business Central) AL Language development."
 "vjeko-al-objid","AL Object ID Ninja","vjeko","Vjeko.com","Manage object IDs in multi-user environments with mind-boggling simplicity."
 "al-test-runner","AL Test Runner","jamespearson","James Pearson","Test runner for AL tests for Business Central development"
 "bdev-al-xml-doc","AL XML Documentation","365businessdevelopment","365 business development","Generate XML documentation comments for AL source code and create markdown documentation from it."

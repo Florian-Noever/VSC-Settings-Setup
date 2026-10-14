@@ -1,7 +1,6 @@
 ﻿"name","displayname","publisher","author","description","prerelease"
 "al-codeactions","AL CodeActions","davidfeldhoff","David Feldhoff","Adds codeactions to the AL language","false"
 "al","AL Language extension for Microsoft Dynamics 365 Business Central","ms-dynamics-smb","Microsoft","Development tools for Dynamics 365 Business Central","true"
-"al-object-designer","AL Object Designer","martonsagi","Márton Sági","Object Designer optimized for (Dynamics 365 Business Central) AL Language development.","false"
 "al-toolbox","AL Toolbox","bartpermentier","Bart Permentier","AL Language Regions and Snippets","false"
 "al-var-helper","AL Variable Helper","rasmus","Rasmus Aaen","Intellisense to assign correct variable names in AL.","false"
 "al-code-outline","AZ AL Dev Tools/AL Code Outline","andrzejzwierzchowski","Andrzej Zwierzchowski","AZ AL Development Tools: AL code outline, object browser, object creators","true"

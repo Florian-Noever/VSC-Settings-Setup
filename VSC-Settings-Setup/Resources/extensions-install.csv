@@ -5,6 +5,7 @@
 "al-var-helper","AL Variable Helper","rasmus","Rasmus Aaen","Intellisense to assign correct variable names in AL.","false"
 "al-code-outline","AZ AL Dev Tools/AL Code Outline","andrzejzwierzchowski","Andrzej Zwierzchowski","AZ AL Development Tools: AL code outline, object browser, object creators","true"
 "better-comments","Better Comments","aaron-bond","Aaron Bond","Improve your code commenting by annotating with alert, informational, TODOs, and more!","false"
+"Bookmarks","Bookmarks","alefragnani","Alessandro Fragnani","Mark lines and jump to them","false"
 "businesscentral-lintercop","BusinessCentral.LinterCop","stefanmaron","Stefan Maron","Provides Linting for the AL Language (Business Central)","false"
 "code-spell-checker","Code Spell Checker","streetsidesoftware","Street Side Software","Spelling checker for source code","false"
 "codesnap-plus-fix","CodeSnap-plus-fix","eugenejeon","Eugene Jeon","📷 Take beautiful screenshots of your code","false"

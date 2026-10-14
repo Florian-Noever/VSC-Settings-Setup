@@ -4,13 +4,13 @@
         "**/bin": true,
         "**/obj": true,
         "**/*.lscache": true,
+        "**/*.user": true,
     },
     "search.exclude": {
         ".vs": true,
         "**/bin": true,
         "**/obj": true,
         "**/*.lscache": true,
+        "**/*.user": true,
     },
-    "dotnet.backgroundAnalysis.compilerDiagnosticsScope": "fullSolution",
-    "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "fullSolution"
 }

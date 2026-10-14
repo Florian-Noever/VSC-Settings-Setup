@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="VSC-Settings-Setup.Tests/VSC-Settings-Setup.Tests.csproj" />
+  <Project Path="VSC-Settings-Setup/VSC-Settings-Setup.csproj" />
+</Solution>

@@ -1,0 +1,192 @@
+{
+  "explorer.confirmDelete": false,
+  "workbench.iconTheme": "vscode-icons",
+  "txtsyntax.associations": [
+    ".ini",
+    ".cf",
+    ".cnf",
+    ".conf",
+    ".cfg",
+    ".unx",
+    ".eds",
+    ".log",
+    ".out",
+    ".err",
+    ".inf",
+    ".info",
+    ".tmp",
+    ".temp",
+    ".file",
+    ".repo",
+    ".plain",
+    ".desktop",
+    ".properties",
+    ".txt"
+  ],
+  "editor.bracketPairColorization.enabled": true,
+  "git.confirmSync": false,
+  "editor.mouseWheelZoom": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDragAndDrop": false,
+  "todohighlight.defaultStyle": {
+    "icon": "alert",
+    "type": "text-and-comment",
+    "foreground": "black",
+    "background": "white",
+    "opacity": 50,
+    "iconColour": "blue",
+    "gutterIcon": true
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "//todo",
+      "color": "#ff8919",
+      "overviewRulerColor": "#ff8919",
+      "backgroundColor": "#51525e",
+      "border": "1px solid #51525e",
+      "borderRadius": "4px",
+      "isWholeLine": false
+    },
+    {
+      "text": "//review",
+      "color": "#00d9ff",
+      "overviewRulerColor": "#00d9ff",
+      "backgroundColor": "#transparent",
+      "isWholeLine": false
+    },
+    {
+      "text": "//note",
+      "color": "#000000",
+      "overviewRulerColor": "#72824E",
+      "backgroundColor": "#72824E",
+      "border": "1px solid #72824E",
+      "borderRadius": "4px",
+      "isWholeLine": false
+    },
+    {
+      "text": "[FEATURE]",
+      "color": "default",
+      "backgroundColor": "#2b402b",
+      "overviewRulerColor": "#2b402b",
+      "isWholeLine": true
+    },
+    {
+      "text": "[SCENARIO]",
+      "color": "default",
+      "backgroundColor": "#2b402b",
+      "overviewRulerColor": "#2b402b",
+      "isWholeLine": true
+    },
+    {
+      "text": "[GIVEN]",
+      "color": "default",
+      "backgroundColor": "#2b402b",
+      "overviewRulerColor": "#2b402b",
+      "isWholeLine": true
+    },
+    {
+      "text": "[WHEN]",
+      "color": "default",
+      "backgroundColor": "#2b402b",
+      "overviewRulerColor": "#2b402b",
+      "isWholeLine": true
+    },
+    {
+      "text": "[THEN]",
+      "color": "default",
+      "backgroundColor": "#2b402b",
+      "overviewRulerColor": "#2b402b",
+      "isWholeLine": true
+    }
+  ],
+  "todo.colors.types": {
+    "TODO": "#eeff00",
+    "BUG": "#9e0000",
+    "REVIEW": "#00d9ff",
+    "OPTIMIZE": "#65cf65",
+    "NOTE": "#72824E"
+  },
+  "todo.embedded.provider": "ag",
+  "todo.embedded.providers.ag.regex": "(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|REVIEW|NOTE)",
+  "workbench.editorAssociations": {
+    "*.docx": "default"
+  },
+  "cSpell.dictionaries": [
+    "en",
+    "de",
+    "de-DE"
+  ],
+  "git.enableSmartCommit": true,
+  "security.workspace.trust.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "workbench.startupEditor": "none",
+  "git.openRepositoryInParentFolders": "always",
+  "editor.linkedEditing": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[al]": {
+    "editor.defaultFormatter": "ms-dynamics-smb.al"
+  },
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "files.autoSave": "afterDelay",
+  "alOutline.codeActionsOnSave": [
+    "SortProperties",
+    "SortVariables"
+  ],
+  "alOutline.codeCleanupActions": [
+    "RemoveWithStatements",
+    "FixKeywordsCase",
+    "FixIdentifiersCase",
+    "SortProperties",
+    "SortVariables",
+    "RemoveBeginEnd",
+    "RemoveRedundantAppAreas",
+    "RemoveRedundantDataClassification",
+    "AddMissingParentheses"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "alOutline.fixCodeCopMissingParenthesesOnSave": true,
+  "alOutline.noEmptyLinesAtTheEndOfWizardGeneratedFiles": true,
+  "alOutline.openDefinitionInNewTab": true,
+  "alOutline.pageFieldToolTipComment": "de-DE=Gibt den Wert des Feldes %Caption.Comment% an.",
+  "alOutline.triggersSortMode": "NaturalOrder",
+  "github.copilot.enable": {
+    "xml": "false",
+    "json": "false"
+  },
+  "github.copilot.chat.welcomeMessage": "never",
+  "codesnap-plus.realLineNumbers": true,
+  "codesnap-plus.showWindowControls": false,
+  "codesnap-plus.shutterAction": "copy",
+  "codesnap-plus.transparentBackground": true,
+  "codesnap-plus.target": "window",
+  "codesnap-plus.toolMode": "simple",
+  "github.copilot.chat.localeOverride": "de",
+  "alCodeActions.initializeIsHandledVariableWhenCreatingOnBeforePublisher": true,
+  "alCodeActions.publisherHasVarParametersOnly": true,
+  "alObjectDesigner.useALTestRunner": true,
+  "cSpell.language": "en,de",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": false,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "editor.stickyScroll.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "files.associations": {
+    "*.xlf": "plaintext"
+  },
+  "xliffSync.keepEditorOpenAfterSync": false,
+  "postman.telemetry.enabled": false,
+  "excalidraw.theme": "auto",
+  "settingsSync.ignoredSettings": [
+    "-window.zoomLevel"
+  ],
+  "cSpell.enabledNotifications": {
+    "Maximum Word Length Exceeded": false,
+    "Lines too Long": false,
+    "Average Word Length too Long": false
+  }
+}

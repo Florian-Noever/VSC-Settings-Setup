@@ -36,14 +36,14 @@ The files in [`VSC-Settings-Setup/Resources`](VSC-Settings-Setup/Resources) are 
 
 ## Build
 
-Requires the .NET 10 SDK.
+Requires the .NET 10 SDK. Publishing also needs the *Desktop development with C++* workload of Visual Studio, since Native AOT links the exe with the MSVC linker, and for ARM64 additionally the *MSVC ARM64 build tools*.
 
 ```
 dotnet test VSC-Settings-Setup.slnx
 dotnet publish VSC-Settings-Setup/VSC-Settings-Setup.csproj -p:PublishProfile=FolderProfile
 ```
 
-The publish profile creates a self-contained `VSC-Settings-Setup.exe` (no .NET installation needed on the target machine) and `config.ini` in `VSC-Settings-Setup/bin/Publish`. Add `-r win-arm64` to build it for Windows on ARM.
+The publish profile compiles `VSC-Settings-Setup.exe` with Native AOT into a native exe of about 8 MB that needs no .NET installation on the target machine, and puts it with `config.ini` into `VSC-Settings-Setup/bin/Publish`. Add `-r win-arm64` to build it for Windows on ARM.
 
 ## CI & Releases
 

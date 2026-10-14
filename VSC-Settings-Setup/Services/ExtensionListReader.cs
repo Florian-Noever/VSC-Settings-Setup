@@ -1,8 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 using CsvHelper;
 using CsvHelper.Configuration;
-using CsvHelper.TypeConversion;
 
 using VSC_Settings_Setup.Data;
 
@@ -10,6 +10,15 @@ namespace VSC_Settings_Setup.Services;
 
 public static class ExtensionListReader
 {
+    private const string NameColumn = "name";
+    private const string PublisherColumn = "publisher";
+    private const string DisplayNameColumn = "displayname";
+    private const string AuthorColumn = "author";
+    private const string DescriptionColumn = "description";
+    private const string PreReleaseColumn = "prerelease";
+    private static readonly string[] RequiredColumns = [NameColumn, PublisherColumn];
+    private static readonly string[] OptionalColumns = [DisplayNameColumn, AuthorColumn, DescriptionColumn, PreReleaseColumn];
+
     /// <exception cref="InvalidDataException">The file is not a valid extension list.</exception>
     public static LoadResult<IReadOnlyList<VSCodeExtension>> Read(string path)
     {
@@ -29,24 +38,24 @@ public static class ExtensionListReader
             TrimOptions = TrimOptions.Trim,
             // Throwing on bad data (the default) leaves the parser in a broken state for the following lines, so they are only recorded and skipped below.
             BadDataFound = args => linesWithInvalidQuotes.Add(args.Context.Parser!.RawRow),
-            ReadingExceptionOccurred = args =>
-            {
-                warnings.Add($"Skipped line {args.Exception.Context?.Parser?.RawRow}: {Describe(args.Exception)}");
-                return false;
-            },
         };
 
         using var csv = new CsvReader(reader, configuration);
-        csv.Context.RegisterClassMap(new VSCodeExtensionMap());
-
         var extensions = new List<VSCodeExtension>();
         var ids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         try
         {
-            foreach (var extension in csv.GetRecords<VSCodeExtension>())
+            if (!csv.Read())
+                return new(extensions, warnings);
+
+            csv.ReadHeader();
+            var columns = FindColumns(csv);
+            while (csv.Read())
             {
                 var line = csv.Parser.RawRow;
-                if (linesWithInvalidQuotes.Contains(line))
+                if (!TryReadExtension(csv, columns, out var extension, out var error))
+                    warnings.Add($"Skipped line {line}: {error}");
+                else if (linesWithInvalidQuotes.Contains(line))
                     warnings.Add($"Skipped line {line}: A field contains invalid quotes.");
                 else if (!VSCodeExtension.IsValidId(extension.Id))
                     warnings.Add($"Skipped line {line}: '{extension.Id}' is not a valid extension ID.");
@@ -56,36 +65,52 @@ public static class ExtensionListReader
                     extensions.Add(extension);
             }
         }
-        catch (HeaderValidationException ex)
-        {
-            var missingColumns = string.Join(", ", ex.InvalidHeaders.SelectMany(header => header.Names));
-            throw new InvalidDataException($"Required column(s) missing: {missingColumns}.", ex);
-        }
         catch (CsvHelperException ex)
         {
-            throw new InvalidDataException($"Line {ex.Context?.Parser?.RawRow} could not be read. {Describe(ex)}", ex);
+            throw new InvalidDataException($"Line {ex.Context?.Parser?.RawRow} could not be read. The line has an invalid format.", ex);
         }
 
         return new(extensions, warnings);
     }
 
-    private static string Describe(CsvHelperException exception) => exception switch
+    // Columns are read by name instead of through a CsvHelper class map, whose reflection breaks once the app is compiled with Native AOT.
+    private static Dictionary<string, int> FindColumns(CsvReader csv)
     {
-        TypeConverterException ex => $"'{ex.Text}' is not a valid value for {ex.MemberMapData?.Names.FirstOrDefault()}.",
-        CsvHelper.MissingFieldException => "A field is missing.",
-        _ => "The line has an invalid format.",
-    };
+        var columns = RequiredColumns.Concat(OptionalColumns).ToDictionary(column => column, column => csv.GetFieldIndex(column, isTryGet: true));
+        var missingColumns = RequiredColumns.Where(column => columns[column] < 0).ToList();
+        if (missingColumns.Count > 0)
+            throw new InvalidDataException($"Required column(s) missing: {string.Join(", ", missingColumns)}.");
+        return columns;
+    }
 
-    private sealed class VSCodeExtensionMap : ClassMap<VSCodeExtension>
+    private static bool TryReadExtension(CsvReader csv, Dictionary<string, int> columns, [NotNullWhen(true)] out VSCodeExtension? extension, [NotNullWhen(false)] out string? error)
     {
-        public VSCodeExtensionMap()
+        extension = null;
+        try
         {
-            Map(extension => extension.Name).Name("name");
-            Map(extension => extension.DisplayName).Name("displayname").Optional();
-            Map(extension => extension.Publisher).Name("publisher");
-            Map(extension => extension.Author).Name("author").Optional();
-            Map(extension => extension.Description).Name("description").Optional();
-            Map(extension => extension.PreRelease).Name("prerelease").Optional().Default(false);
+            var name = Field(NameColumn);
+            var displayName = Field(DisplayNameColumn);
+            var publisher = Field(PublisherColumn);
+            var author = Field(AuthorColumn);
+            var description = Field(DescriptionColumn);
+            var preReleaseText = Field(PreReleaseColumn);
+            var preRelease = false;
+            if (preReleaseText.Length > 0 && !csv.TryGetField(columns[PreReleaseColumn], out preRelease))
+            {
+                error = $"'{preReleaseText}' is not a valid value for {PreReleaseColumn}.";
+                return false;
+            }
+
+            extension = new VSCodeExtension { Name = name, DisplayName = displayName, Publisher = publisher, Author = author, Description = description, PreRelease = preRelease };
+            error = null;
+            return true;
         }
+        catch (CsvHelper.MissingFieldException)
+        {
+            error = "A field is missing.";
+            return false;
+        }
+
+        string Field(string column) => columns[column] < 0 ? string.Empty : csv.GetField(columns[column]) ?? string.Empty;
     }
 }

@@ -23,7 +23,8 @@ public static class Program
         }
         catch (Exception ex)
         {
-            console.WriteException(ex, ExceptionFormats.ShortenEverything);
+            // WriteException needs dynamic code: under Native AOT it can't shorten the stack trace and prints every raw frame instead.
+            console.Error($"{ex.GetType().Name}: {ex.Message}");
             return 1;
         }
         finally

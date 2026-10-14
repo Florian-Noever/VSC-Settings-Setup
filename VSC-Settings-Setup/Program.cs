@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.Text;
 
 using Spectre.Console;
@@ -49,7 +50,8 @@ public static class Program
         var tempDirectory = Path.Combine(Path.GetTempPath(), TempFolderName);
         using var httpClient = new HttpClient();
         var prerequisites = new PrerequisiteProvider(httpClient, settings.AllowManualOverride, AppContext.BaseDirectory, tempDirectory);
-        var installer = new VSCodeInstaller(httpClient, tempDirectory);
+        // OSArchitecture reports ARM64 even when the x64 build runs emulated on it, so ARM64 Windows always gets the native VS Code.
+        var installer = new VSCodeInstaller(httpClient, tempDirectory, RuntimeInformation.OSArchitecture);
         return await new SetupWorkflow(console, settings, prerequisites, installer).RunAsync();
     }
 }

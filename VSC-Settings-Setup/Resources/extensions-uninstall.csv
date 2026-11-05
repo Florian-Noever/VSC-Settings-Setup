@@ -9,6 +9,7 @@
 "vscode-azureresourcegroups","Azure Resources","ms-azuretools","Microsoft","An extension for viewing and managing Azure resources."
 "bracket-select","Bracket Select","chunsen","Chunsen Wang","Quick select code between brackets, support for (),{} and [], <>"
 "csharp","C#","ms-dotnettools","Microsoft","Base language support for C#"
+"csdevkit","C# Dev Kit","ms-dotnettools","Microsoft","Official C# extension from Microsoft"
 "createguid","Create GUID","nwallace","nwallace","A command that creates a new GUID."
 "vscode-docker","Docker","ms-azuretools","Microsoft","Makes it easy to create, manage, and debug containerized applications."
 "nab-al-tools","NAB AL Tools","nabsolutions","NAB Solutions AB","Development and translation management tool for AL language and Microsoft Dynamics 365 Business Central extensions."

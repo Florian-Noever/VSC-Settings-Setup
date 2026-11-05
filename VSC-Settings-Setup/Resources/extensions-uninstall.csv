@@ -4,6 +4,7 @@
 "vjeko-al-objid","AL Object ID Ninja","vjeko","Vjeko.com","Manage object IDs in multi-user environments with mind-boggling simplicity."
 "al-test-runner","AL Test Runner","jamespearson","James Pearson","Test runner for AL tests for Business Central development"
 "bdev-al-xml-doc","AL XML Documentation","365businessdevelopment","365 business development","Generate XML documentation comments for AL source code and create markdown documentation from it."
+"vscode-azurefunctions","Azure Functions","ms-azuretools","Microsoft","An Azure Functions extension for Visual Studio Code."
 "bracket-select","Bracket Select","chunsen","Chunsen Wang","Quick select code between brackets, support for (),{} and [], <>"
 "createguid","Create GUID","nwallace","nwallace","A command that creates a new GUID."
 "vscode-docker","Docker","ms-azuretools","Microsoft","Makes it easy to create, manage, and debug containerized applications."

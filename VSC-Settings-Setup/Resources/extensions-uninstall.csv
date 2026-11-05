@@ -12,6 +12,7 @@
 "csdevkit","C# Dev Kit","ms-dotnettools","Microsoft","Official C# extension from Microsoft"
 "createguid","Create GUID","nwallace","nwallace","A command that creates a new GUID."
 "vscode-docker","Docker","ms-azuretools","Microsoft","Makes it easy to create, manage, and debug containerized applications."
+"excalidraw-editor","Excalidraw","pomdtr","pomdtr","Draw schemas in VS Code using Excalidraw"
 "nab-al-tools","NAB AL Tools","nabsolutions","NAB Solutions AB","Development and translation management tool for AL language and Microsoft Dynamics 365 Business Central extensions."
 "partial-diff","Partial Diff","ryu1kn","Ryuichi Inagaki","Compare (diff) text selections within a file, across files, or to the clipboard"
 "platformio-ide","PlatformIO IDE","platformio","PlatformIO","Your Gateway to Embedded Software Development Excellence: CMSIS, ESP-IDF, FreeRTOS, libOpenCM3, mbed OS, SPL, STM32Cube, Zephyr RTOS, Arduino, ARM, AVR, Espressif (ESP8266/ESP32), FPGA, MCS-51 (8051), MSP430, Nordic (nRF51/nRF52), PIC32, RISC-V, Raspberry Pi (RP2040), STMicroelectronics (STM8/STM32), Teensy"

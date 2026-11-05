@@ -14,6 +14,7 @@
 "vscode-docker","Docker","ms-azuretools","Microsoft","Makes it easy to create, manage, and debug containerized applications."
 "nab-al-tools","NAB AL Tools","nabsolutions","NAB Solutions AB","Development and translation management tool for AL language and Microsoft Dynamics 365 Business Central extensions."
 "partial-diff","Partial Diff","ryu1kn","Ryuichi Inagaki","Compare (diff) text selections within a file, across files, or to the clipboard"
+"platformio-ide","PlatformIO IDE","platformio","PlatformIO","Your Gateway to Embedded Software Development Excellence: CMSIS, ESP-IDF, FreeRTOS, libOpenCM3, mbed OS, SPL, STM32Cube, Zephyr RTOS, Arduino, ARM, AVR, Espressif (ESP8266/ESP32), FPGA, MCS-51 (8051), MSP430, Nordic (nRF51/nRF52), PIC32, RISC-V, Raspberry Pi (RP2040), STMicroelectronics (STM8/STM32), Teensy"
 "rest-client","REST Client","humao","Huachao Mao","REST Client for Visual Studio Code"
 "snippet-creator","snippet-creator","nikitakunevich","nikitaKunevich","(deprecated, looking for a maintainer) Create snippets from selection"
 "todo-tree","Todo Tree","gruntfuggly","Gruntfuggly","Show TODO, FIXME, etc. comment tags in a tree view"
